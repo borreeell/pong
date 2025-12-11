@@ -1,0 +1,46 @@
+# Fitxers objecte
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.gch
+
+# Fitxers binaris
+*.exe
+*.out
+*.app
+*.i
+*.dll
+
+# Fitxers de depuracio
+*.dSYM/
+*.dmp
+*.stackdump
+*.log
+
+# Fitxers generats pel compilador
+*.ilk
+*.ipch
+*.pdb
+*.idb
+*.opendb
+
+# Fitxers temporals i backups
+*~
+*.swp
+*.bak
+*.tmp
+
+# Fitxers de configuracio de l'IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Carpeta de compilacio
+build/
+bin/
+Debug/
+Release/
+*.vsidx
+*.db

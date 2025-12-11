@@ -2,10 +2,26 @@
 //
 
 #include <iostream>
+#include <SFML/Graphics.hpp>
+
+using namespace sf;
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	RenderWindow window(VideoMode({ 200, 200 }), "Test");
+	CircleShape shape(100.f);
+	shape.setFillColor(Color::Green);
+
+	while (window.isOpen()) {
+		while (const optional event = window.pollEvent()) {
+			if (event->is<Event::Closed>()) window.close();
+		}
+		
+		window.clear();
+		window.draw(shape);
+		window.display();
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
