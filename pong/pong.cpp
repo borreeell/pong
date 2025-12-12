@@ -1,36 +1,57 @@
-// pong.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// PROGRAMA --> Ping Pong
+// AUTOR --> Pablo Abad Ortega
+// FECHA --> 11/12/2025
 
-#include <iostream>
-#include <SFML/Graphics.hpp>
+#include <iostream> //  entrada/salida
+#include <SFML/Graphics.hpp> // para gráficos
 
-using namespace sf;
-using namespace std;
+using namespace sf; // espacio de nombres de SFML
+using namespace std; // espacio de nombres estándar
 
 int main()
 {
-	RenderWindow window(VideoMode({ 200, 200 }), "Test");
-	CircleShape shape(100.f);
-	shape.setFillColor(Color::Green);
 
-	while (window.isOpen()) {
-		while (const optional event = window.pollEvent()) {
-			if (event->is<Event::Closed>()) window.close();
+	// CREAR VENTANA 
+	RenderWindow window(VideoMode({ 500, 500 }), "PING PONG");
+
+
+	// CREAR FORMAS - CIRCULOS
+	CircleShape pelota(10.f);   // Círculo de radio 30
+	pelota.setFillColor(Color::Red);
+	pelota.setPosition({ 30.f, 30.f });
+	window.draw(pelota); // dibuja círculo verde
+
+	// RECTANGULOS - PALAS
+	RectangleShape pala1({ 10.f, 30.f });
+	pala1.setFillColor(Color::White);
+	pala1.setPosition({ 30.f, 30.f });
+	window.draw(pala1); // dibuja rectangulo verde
+
+
+	int contador = 0; // contador en 0
+
+
+	while (window.isOpen()) // bucle principal se ejecuta mientras la ventana esté abierta
+	{
+		// Bucle para eventos
+		while (const optional event = window.pollEvent())
+		{
+			// Si el evento es cerrar la ventana...
+			if (event->is<Event::Closed>()) window.close(); // ...cierra la ventana
 		}
-		
-		window.clear();
-		window.draw(shape);
-		window.display();
+
+		contador++;
+		pelota.setPosition({ 30.f + 10 * contador, 30.f }); // cambiar la posicion de la pelota
+
+
+
+		window.draw(pelota); // dibuja círculo verde
+		window.draw(pala1); // dibuja rectangulo verde
+
+		window.display(); // actualiza la pantalla
+		sleep(seconds(1));
+
+		// CONFIG. VENTANA
+		window.clear(); // limpia la ventana con el color por defecto de negro
 	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
