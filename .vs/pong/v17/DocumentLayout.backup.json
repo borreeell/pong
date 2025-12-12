@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\AluCiclesGS1\\PBP\\0485 - Programacio\\CPP\\pong\\",
+  "WorkspaceRootPath": "D:\\AluCiclesGS1\\Ping Pong Retro Challenge\\pong\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|D:\\AluCiclesGS1\\PBP\\0485 - Programacio\\CPP\\pong\\pong\\pong.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|D:\\AluCiclesGS1\\Ping Pong Retro Challenge\\pong\\pong\\pong.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|solutionrelative:pong\\pong.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "pong.cpp",
-              "DocumentMoniker": "D:\\AluCiclesGS1\\PBP\\0485 - Programacio\\CPP\\pong\\pong\\pong.cpp",
+              "DocumentMoniker": "D:\\AluCiclesGS1\\Ping Pong Retro Challenge\\pong\\pong\\pong.cpp",
               "RelativeDocumentMoniker": "pong\\pong.cpp",
-              "ToolTip": "D:\\AluCiclesGS1\\PBP\\0485 - Programacio\\CPP\\pong\\pong\\pong.cpp",
-              "RelativeToolTip": "pong\\pong.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\AluCiclesGS1\\Ping Pong Retro Challenge\\pong\\pong\\pong.cpp*",
+              "RelativeToolTip": "pong\\pong.cpp*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-11T09:24:07.371Z",
               "EditorCaption": ""

@@ -12,24 +12,25 @@ int main()
 {
 
 	// CREAR VENTANA 
-	RenderWindow window(VideoMode({ 500, 500 }), "PING PONG");
-
+	RenderWindow window(VideoMode({ 800, 600 }), "PING PONG");
 
 	// CREAR FORMAS - CIRCULOS
-	CircleShape pelota(10.f);   // Círculo de radio 30
+	CircleShape pelota(10.f); // Círculo de radio 30
 	pelota.setFillColor(Color::Red);
 	pelota.setPosition({ 30.f, 30.f });
-	window.draw(pelota); // dibuja círculo verde
+	window.draw(pelota); // dibuja círculo 
 
-	// RECTANGULOS - PALAS
-	RectangleShape pala1({ 10.f, 30.f });
-	pala1.setFillColor(Color::White);
-	pala1.setPosition({ 30.f, 30.f });
-	window.draw(pala1); // dibuja rectangulo verde
+	// RECTANGULOS - PALA1
+	RectangleShape pala1({ 10.f, 120.f }); // midas del rectangulo 
+	pala1.setFillColor(Color::White); // color blanco
+	pala1.setPosition({ 30.f, 30.f }); // posicion en la ventana
+	window.draw(pala1); // dibuja rectangulo 
 
-
-	int contador = 0; // contador en 0
-
+	// RECTANGULOS - PALA2
+	RectangleShape pala2({ 10.f, 120.f }); // midas del rectangulo 
+	pala2.setFillColor(Color::White); // color blanco
+	pala2.setPosition({ 750.f, 470.f }); // posicion en la ventana
+	window.draw(pala2); // dibuja rectangulo 
 
 	while (window.isOpen()) // bucle principal se ejecuta mientras la ventana esté abierta
 	{
@@ -40,13 +41,14 @@ int main()
 			if (event->is<Event::Closed>()) window.close(); // ...cierra la ventana
 		}
 
-		contador++;
-		pelota.setPosition({ 30.f + 10 * contador, 30.f }); // cambiar la posicion de la pelota
+	
+		pelota.setPosition({ 30.f + 10, 30.f }); // cambiar la posicion de la pelota
 
-
-
+		// DIBUJA POR PANTALLA LOS OBJETOS
 		window.draw(pelota); // dibuja círculo verde
 		window.draw(pala1); // dibuja rectangulo verde
+		window.draw(pala2); // dibuja rectangulo verde
+
 
 		window.display(); // actualiza la pantalla
 		sleep(seconds(1));
