@@ -1,9 +1,16 @@
-#pragma once
-
 #include <SFML/Graphics.hpp>
 
+#include "pablo.h"
 
-void init_pilota();
-void moure_pilota();
-void dibuixar_pilota();
-void colisio_pilota();
+// Estructura per a la pilota
+struct Pilota {
+    float x, y;
+    float radi;
+    float velocitatX, velocitatY;
+};
+
+void inicialitzarPilota(Pilota& pilota);
+void actualitzarPilota(Pilota& pilota, float tempsTranscorregut);
+void gestionarCollisions(Pilota& pilota, const Pala& palaEsquerra, const Pala& palaDreta);
+bool comprovarPuntuacio(const Pilota& pilota, Pala& palaEsquerra, Pala& palaDreta);
+void dibuixarPilota(sf::RenderWindow& finestra, const Pilota& pilota);

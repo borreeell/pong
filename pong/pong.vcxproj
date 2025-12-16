@@ -131,7 +131,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="pablo.cpp" />
+    <ClCompile Include="pau.cpp" />
     <ClCompile Include="pong.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pablo.h" />
+    <ClInclude Include="pau.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,5 +18,19 @@
     <ClCompile Include="pong.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pablo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pau.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pablo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pau.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
