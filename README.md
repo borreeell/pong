@@ -43,8 +43,7 @@ El repartiment i execució de les tasques principals ha estat el següent:
 ---
 
 ## Controls
-| Acció | Tecla |
-| :--- | :--- |
-| Moure Amunt | `W` |
-| Moure Avall | `S` |
-| Sortir | `Esc` / Tancar Finestra |
+Acció i Tecla
+Moure Amunt --> `W`
+Moure Avall --> `S`
+Sortir --> `Esc` (Tancar Finestra)
