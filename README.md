@@ -39,7 +39,6 @@ TODO
 |-----------------|--------------|
 | Moure Amunt    | `W`          |
 | Moure Avall    | `S`          |
-| Sortir         | `Esc`        |
 
 ---
 
