@@ -53,4 +53,3 @@ El projecte està dividit en tres nivells principals:
 ## 👥 Autors
 - [**pabloabaad25 - Pablo Abad**](https://github.com/pabloabaad25)
 - [**borreell - Pau Borrell**](https://github.com/borreeell)
----
