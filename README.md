@@ -30,8 +30,17 @@ El projecte està dividit en tres nivells principals:
 
 ## 🔧 Configuració i Execució
 
-TODO
+### Requisits:
+- Llibreria [**SFML** instalada](https://www.sfml-dev.org/download/).
+- Visual Studio (o un IDE similar compatible).
 
+### Passos:
+1. Clona el repositori: `git clone https://github.com/borreeell/pong`
+1. Incloure les DLLs d'SFML al projecte (Estan dins de `SFML/bin`).
+
+### Compilació i Execució al Visual Studio:
+- **Compilar:** `F7`
+- **Executar:** `F5`
 ---
 
 ## 🕹️ Controls:
