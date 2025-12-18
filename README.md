@@ -16,14 +16,14 @@ Una recreació moderna i dinàmica del clàssic joc arcade de Ping Pong, desenvo
 
 El projecte està dividit en tres nivells principals:
 
-1. **🔹 Interfície i Finestra:**
+1. **Interfície i Finestra:**
    - Gestió del bucle d'esdeveniments (tecles, tancar finestra, etc.).
 
-2. **🔹 Lògica d'Entitats:**
+2. **Lògica d'Entitats:**
    - Moviment de les pales.
    - Interacció amb la pilota i detecció de col·lisions.
 
-3. **🔹 Utilitats:**
+3. **Utilitats:**
    - Càlcul de rebots i moviments automàtics (inici de ronda i IA).
 
 ---
@@ -36,16 +36,13 @@ TODO
 
 ## 🕹️ Controls:
 | Acció          | Tecla        |
-|-----------------|--------------|
+|-----------------|-------------|
 | Moure Amunt    | `W`          |
 | Moure Avall    | `S`          |
 
 ---
 
 ## 👥 Autors
-- **Pau Borrell** - Llogica de la pilota i del marcador
-- **Pablo Abad** - Llogica de la pilota i creacio de la interficie grafica
-
+- [**pabloabaad25 - Pablo Abad**](https://github.com/pabloabaad25)
+- [**borreell - Pau Borrell**](https://github.com/borreeell)
 ---
-
-Gaudeix del joc i diverteix-te programant! 🚀
