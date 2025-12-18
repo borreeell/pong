@@ -2,7 +2,7 @@
 
 #include "pablo.h"
 
-// Estructura per a la pilota
+// Estructura que representa la pilota
 struct Pilota {
     float x, y;
     float radi;

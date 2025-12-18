@@ -16,15 +16,17 @@ void inicialitzarPilota(Pilota& pilota) {
     pilota.y = ALCADA_FINESTRA / 2.0f;
     pilota.radi = RADI_PILOTA;
 
-    // Direcció aleatòria inicial
+    // Direccio i angles inicials de la pilota aleatoris
     float angle = (rand() % 60 - 30) * 3.14159f / 180.0f;
-    int direccio = (rand() % 2) * 2 - 1; // -1 o 1
+    int direccio = (rand() % 2) * 2 - 1;
 
+    // Modificar les velocitats de la pilota
     pilota.velocitatX = direccio * VELOCITAT_PILOTA * cos(angle);
     pilota.velocitatY = VELOCITAT_PILOTA * sin(angle);
 }
 
 void actualitzarPilota(Pilota& pilota, float tempsTranscorregut) {
+    // Actualitza les velocitat de la pilota a mida que passa el temps
     pilota.x += pilota.velocitatX * tempsTranscorregut;
     pilota.y += pilota.velocitatY * tempsTranscorregut;
 
@@ -34,7 +36,6 @@ void actualitzarPilota(Pilota& pilota, float tempsTranscorregut) {
     }
 }
 
-// Comprovar col·lisió amb les pales
 bool comprovarCollisioPala(const Pilota& pilota, const Pala& pala) {
     return pilota.x - pilota.radi < pala.x + pala.amplada &&
         pilota.x + pilota.radi > pala.x &&
@@ -45,7 +46,7 @@ bool comprovarCollisioPala(const Pilota& pilota, const Pala& pala) {
 void gestionarCollisions(Pilota& pilota, const Pala& palaEsquerra, const Pala& palaDreta) {
     if (comprovarCollisioPala(pilota, palaEsquerra)) {
         if (pilota.velocitatX < 0) {
-            pilota.velocitatX = -pilota.velocitatX * 1.05f; // Augmentar velocitat
+            pilota.velocitatX = -pilota.velocitatX * 1.05f; // Augmentar velocitat al colisionar amb la pala
             float posicioRelativa = (pilota.y - (palaEsquerra.y + palaEsquerra.alcada / 2)) / (palaEsquerra.alcada / 2);
             pilota.velocitatY += posicioRelativa * 200.0f;
         }
@@ -61,6 +62,7 @@ void gestionarCollisions(Pilota& pilota, const Pala& palaEsquerra, const Pala& p
 }
 
 bool comprovarPuntuacio(const Pilota& pilota, Pala& palaEsquerra, Pala& palaDreta) {
+    // Augmenta la puntuacio de la pala que hagi marcat
     if (pilota.x < 0) {
         palaEsquerra.puntuacio++;
 
@@ -78,6 +80,7 @@ bool comprovarPuntuacio(const Pilota& pilota, Pala& palaEsquerra, Pala& palaDret
     return false;
 }
 
+// Dibuixa la pilota a la finestra
 void dibuixarPilota(sf::RenderWindow& finestra, const Pilota& pilota) {
     sf::CircleShape forma(pilota.radi);
     forma.setPosition({ pilota.x - pilota.radi, pilota.y - pilota.radi });

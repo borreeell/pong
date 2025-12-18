@@ -11,15 +11,18 @@
 using namespace std;
 using namespace sf; 
 
+
+// Constants del joc
 const int AMPLADA_FINESTRA = 800;
 const int ALCADA_FINESTRA = 600;
 const float AMPLADA_PALA = 15.0f;
 const float ALCADA_PALA = 100.0f;
 
+
 void dibuixarLiniaCentral(RenderWindow& finestra) {
     for (int i = 0; i < ALCADA_FINESTRA; i += 20) {
         RectangleShape linia(Vector2f(2, 10));
-        linia.setPosition({ AMPLADA_FINESTRA / 2.0f, static_cast<float>(i) });
+        linia.setPosition({ AMPLADA_FINESTRA / 2.0f, static_cast<float>(i) }); // Dibuixa la linia al mitg de la finestra
         linia.setFillColor(Color(100, 100, 100));
         finestra.draw(linia);
     }
@@ -27,17 +30,17 @@ void dibuixarLiniaCentral(RenderWindow& finestra) {
 
 void dibuixarPuntuacio(RenderWindow& finestra, const Pala& palaEsquerra, const Pala& palaDreta, Font& font) {
     Text puntuacioEsquerra(font);
-    puntuacioEsquerra.setString(std::to_string(palaEsquerra.puntuacio));
+    puntuacioEsquerra.setString(std::to_string(palaEsquerra.puntuacio)); // Converteix la puntuacio de int a string
     puntuacioEsquerra.setCharacterSize(50);
     puntuacioEsquerra.setFillColor(sf::Color::White);
-    puntuacioEsquerra.setPosition({ AMPLADA_FINESTRA / 4.0f, 20 });
+    puntuacioEsquerra.setPosition({ AMPLADA_FINESTRA / 4.0f, 20 }); // (x: 200, y: 20)
 
     Text puntuacioDreta(font);
     puntuacioDreta.setFont(font);
     puntuacioDreta.setString(std::to_string(palaDreta.puntuacio));
     puntuacioDreta.setCharacterSize(50);
     puntuacioDreta.setFillColor(sf::Color::White);
-    puntuacioDreta.setPosition({ 3 * AMPLADA_FINESTRA / 4.0f, 20 });
+    puntuacioDreta.setPosition({ 3 * AMPLADA_FINESTRA / 4.0f, 20 }); // (x: 600, y: 20)
 
     finestra.draw(puntuacioEsquerra);
     finestra.draw(puntuacioDreta);
@@ -75,6 +78,7 @@ int main() {
         while (const optional event = window.pollEvent()) {
             if (event->is<Event::Closed>()) window.close();
 
+            // Mou la pala amunt o avall segons la tecla que s'apreti
             if (const auto* key = event->getIf<Event::KeyPressed>()) {
                 if (key->scancode == Keyboard::Scancode::W) {
                     amuntPremut = true;
@@ -85,6 +89,7 @@ int main() {
                 }
             }
 
+            // Deixa de moure la pala al deixar anar la tecla
             if (const auto* key = event->getIf<Event::KeyReleased>()) {
                 if (key->scancode == Keyboard::Scancode::W) {
                     amuntPremut = false;
@@ -107,7 +112,7 @@ int main() {
             inicialitzarPilota(pilota);
         }
 
-        // Dibuixar
+        // Dibuixar els elements
         window.clear(Color::Black);
         dibuixarLiniaCentral(window);
         dibuixarPala(window, palaEsquerra);

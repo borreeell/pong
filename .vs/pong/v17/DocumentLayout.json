@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\borre\\Desktop\\PBP\\pong\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pau.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|solutionrelative:pong\\pau.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pong.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|solutionrelative:pong\\pong.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pau.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|solutionrelative:pong\\pau.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{35E17153-8203-47B5-8B95-2373B7A53D5C}|pong\\pong.vcxproj|C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pau.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -22,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "pau.cpp",
-              "DocumentMoniker": "C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pau.cpp",
-              "RelativeDocumentMoniker": "pong\\pau.cpp",
-              "ToolTip": "C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pau.cpp",
-              "RelativeToolTip": "pong\\pau.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-16T12:02:16.947Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -52,14 +39,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "pau.cpp",
+              "DocumentMoniker": "C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pau.cpp",
+              "RelativeDocumentMoniker": "pong\\pau.cpp",
+              "ToolTip": "C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pau.cpp",
+              "RelativeToolTip": "pong\\pau.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-16T12:02:16.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "pong.cpp",
               "DocumentMoniker": "C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pong.cpp",
               "RelativeDocumentMoniker": "pong\\pong.cpp",
               "ToolTip": "C:\\Users\\borre\\Desktop\\PBP\\pong\\pong\\pong.cpp",
               "RelativeToolTip": "pong\\pong.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-16T11:49:54.566Z"
+              "WhenOpened": "2025-12-16T11:49:54.566Z",
+              "EditorCaption": ""
             }
           ]
         }
