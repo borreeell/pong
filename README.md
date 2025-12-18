@@ -8,7 +8,6 @@ Una recreació moderna i dinàmica del clàssic joc arcade de Ping Pong, desenvo
 - Gràfics simples però elegants.
 - Moviment i col·lisions fluids.
 - **Intel·ligència artificial bàsica** que juga contra tu.
-- Perfecte per als amants de la programació retro i els projectes C++!
 
 ---
 
