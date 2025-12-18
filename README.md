@@ -2,14 +2,12 @@
 
 Una recreació moderna i dinàmica del clàssic joc arcade de Ping Pong, desenvolupada en **C++** amb l'ús de la llibreria gràfica **SFML**.
 
----
 
 ## 🎮 Característiques del Joc
 - Gràfics simples però elegants.
 - Moviment i col·lisions fluids.
 - **Intel·ligència artificial bàsica** que juga contra tu.
 
----
 
 ## ✨ Estructura del Desenvolupament
 
@@ -25,7 +23,6 @@ El projecte està dividit en tres nivells principals:
 3. **Utilitats:**
    - Càlcul de rebots i moviments automàtics (inici de ronda i IA).
 
----
 
 ## 🔧 Configuració i Execució
 
@@ -40,7 +37,7 @@ El projecte està dividit en tres nivells principals:
 ### Compilació i Execució al Visual Studio:
 - **Compilar:** `F7`
 - **Executar:** `F5`
----
+
 
 ## 🕹️ Controls:
 | Acció          | Tecla        |
@@ -48,7 +45,6 @@ El projecte està dividit en tres nivells principals:
 | Moure Amunt    | `W`          |
 | Moure Avall    | `S`          |
 
----
 
 ## 👥 Autors
 - [**pabloabaad25 - Pablo Abad**](https://github.com/pabloabaad25)
