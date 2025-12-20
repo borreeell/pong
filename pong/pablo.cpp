@@ -5,7 +5,8 @@ const float ALCADA_PALA = 100.0f; // Alçada de pala
 const float VELOCITAT_PALA = 400.0f; // Velocitat de moviment
 const int ALCADA_FINESTRA = 600; // Límit vertical finestra
 
-void inicialitzarPala(Pala& pala, float x, float y) { // Funció configuració inicial
+void inicialitzarPala(Pala& pala, float x, float y)
+{ // Funció configuració inicial
     pala.x = x; // Assigna posició horitzontal
     pala.y = y; // Assigna posició vertical
     pala.amplada = AMPLADA_PALA; // Defineix l'amplada
@@ -13,7 +14,8 @@ void inicialitzarPala(Pala& pala, float x, float y) { // Funció configuració i
     pala.puntuacio = 0; // Inicialitza el marcador
 }
 
-void mourePala(Pala& pala, float tempsTranscorregut, bool amunt, bool avall) { // Control manual pala
+void mourePala(Pala& pala, float tempsTranscorregut, bool amunt, bool avall)
+{ // Control manual pala
     if (amunt && pala.y > 0) { // Si prem amunt
         pala.y -= VELOCITAT_PALA * tempsTranscorregut; // Mou cap amunt
     }
@@ -22,7 +24,8 @@ void mourePala(Pala& pala, float tempsTranscorregut, bool amunt, bool avall) { /
     }
 }
 
-void moureIA(Pala& pala, float pilotaX, float pilotaY, float tempsTranscorregut) { // Lògica intel·ligència artificial
+void moureIA(Pala& pala, float pilotaX, float pilotaY, float tempsTranscorregut)
+{ // Lògica intel·ligència artificial
     float centrePala = pala.y + pala.alcada / 2.0f; // Calcula centre vertical
 
     if (centrePala < pilotaY - 20) { // Pilota per sota
@@ -33,12 +36,14 @@ void moureIA(Pala& pala, float pilotaX, float pilotaY, float tempsTranscorregut)
     }
 
     if (pala.y < 0) pala.y = 0; // Bloqueja límit superior
-    if (pala.y + pala.alcada > ALCADA_FINESTRA) { // Fora límit inferior
+    if (pala.y + pala.alcada > ALCADA_FINESTRA)
+    { // Fora límit inferior
         pala.y = ALCADA_FINESTRA - pala.alcada; // Corregeix posició inferior
     }
 }
 
-void dibuixarPala(sf::RenderWindow& finestra, const Pala& pala) { // Renderitzat del gràfic
+void dibuixarPala(sf::RenderWindow& finestra, const Pala& pala)
+{ // Renderitzat del gràfic
     sf::RectangleShape forma(sf::Vector2f(pala.amplada, pala.alcada)); // Crea forma rectangular
     forma.setPosition({ pala.x, pala.y }); // Situa el rectangle
     forma.setFillColor(sf::Color::White); // Color de pala
