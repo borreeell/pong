@@ -1,89 +1,79 @@
-#include <iostream>
-#include <cmath>
-#include <cstdlib>
+#include <iostream> // Entrada i sortida
+#include <cmath> // Funcions matemàtiques
+#include <cstdlib> // Funcions aleatòries
 
-#include "pau.h"
+#include "pau.h" // Inclou capçalera
 
-using namespace std;
+using namespace std; // Espai de noms
 
-const int AMPLADA_FINESTRA = 800;
-const int ALCADA_FINESTRA = 600;
-const float RADI_PILOTA = 8.0f;
-const float VELOCITAT_PILOTA = 300.0f;
+const int AMPLADA_FINESTRA = 800; // Amplada de pantalla
+const int ALCADA_FINESTRA = 600; // Alçada de pantalla
+const float RADI_PILOTA = 8.0f; // Radi del cercle
+const float VELOCITAT_PILOTA = 300.0f; // Velocitat base pilota
 
-void inicialitzarPilota(Pilota& pilota) {
-    pilota.x = AMPLADA_FINESTRA / 2.0f;
-    pilota.y = ALCADA_FINESTRA / 2.0f;
-    pilota.radi = RADI_PILOTA;
+void inicialitzarPilota(Pilota& pilota) { // Configura inici pilota
+    pilota.x = AMPLADA_FINESTRA / 2.0f; // Centre horitzontal
+    pilota.y = ALCADA_FINESTRA / 2.0f; // Centre vertical
+    pilota.radi = RADI_PILOTA; // Defineix radi
 
-    // Direccio i angles inicials de la pilota aleatoris
-    float angle = (rand() % 60 - 30) * 3.14159f / 180.0f;
-    int direccio = (rand() % 2) * 2 - 1;
+    float angle = (rand() % 60 - 30) * 3.14159f / 180.0f; // Angle aleatori
+    int direccio = (rand() % 2) * 2 - 1; // Direcció inicial
 
-    // Modificar les velocitats de la pilota
-    pilota.velocitatX = direccio * VELOCITAT_PILOTA * cos(angle);
-    pilota.velocitatY = VELOCITAT_PILOTA * sin(angle);
+    pilota.velocitatX = direccio * VELOCITAT_PILOTA * cos(angle); // Velocitat horitzontal
+    pilota.velocitatY = VELOCITAT_PILOTA * sin(angle); // Velocitat vertical
 }
 
-void actualitzarPilota(Pilota& pilota, float tempsTranscorregut) {
-    // Actualitza les velocitat de la pilota a mida que passa el temps
-    pilota.x += pilota.velocitatX * tempsTranscorregut;
-    pilota.y += pilota.velocitatY * tempsTranscorregut;
+void actualitzarPilota(Pilota& pilota, float tempsTranscorregut) { // Actualitza moviment
+    pilota.x += pilota.velocitatX * tempsTranscorregut; // Mou horitzontalment
+    pilota.y += pilota.velocitatY * tempsTranscorregut; // Mou verticalment
 
-    // Rebot amb les parets superior i inferior
-    if (pilota.y - pilota.radi <= 0 || pilota.y + pilota.radi >= ALCADA_FINESTRA) {
-        pilota.velocitatY = -pilota.velocitatY;
+    if (pilota.y - pilota.radi <= 0 || pilota.y + pilota.radi >= ALCADA_FINESTRA) { // Rebota dalt/baix
+        pilota.velocitatY = -pilota.velocitatY; // Inverteix sentit vertical
     }
 }
 
-bool comprovarCollisioPala(const Pilota& pilota, const Pala& pala) {
-    return pilota.x - pilota.radi < pala.x + pala.amplada &&
-        pilota.x + pilota.radi > pala.x &&
-        pilota.y + pilota.radi > pala.y &&
-        pilota.y - pilota.radi < pala.y + pala.alcada;
+bool comprovarCollisioPala(const Pilota& pilota, const Pala& pala) { // Detecta xoc
+    return pilota.x - pilota.radi < pala.x + pala.amplada && // Límit dret pala
+           pilota.x + pilota.radi > pala.x && // Límit esquerre pala
+           pilota.y + pilota.radi > pala.y && // Límit superior pala
+           pilota.y - pilota.radi < pala.y + pala.alcada; // Límit inferior pala
 }
 
-void gestionarCollisions(Pilota& pilota, const Pala& palaEsquerra, const Pala& palaDreta) {
-    if (comprovarCollisioPala(pilota, palaEsquerra)) {
-        if (pilota.velocitatX < 0) {
-            pilota.velocitatX = -pilota.velocitatX * 1.05f; // Augmentar velocitat al colisionar amb la pala
-            float posicioRelativa = (pilota.y - (palaEsquerra.y + palaEsquerra.alcada / 2)) / (palaEsquerra.alcada / 2);
-            pilota.velocitatY += posicioRelativa * 200.0f;
+void gestionarCollisions(Pilota& pilota, const Pala& palaEsquerra, const Pala& palaDreta) { // Gestiona rebots
+    if (comprovarCollisioPala(pilota, palaEsquerra)) { // Xoc pala esquerra
+        if (pilota.velocitatX < 0) { // Si va esquerra
+            pilota.velocitatX = -pilota.velocitatX * 1.05f; // Rebota i accelera
+            float posicioRelativa = (pilota.y - (palaEsquerra.y + palaEsquerra.alcada / 2)) / (palaEsquerra.alcada / 2); // Calcula angle
+            pilota.velocitatY += posicioRelativa * 200.0f; // Modifica vertical
         }
     }
 
-    if (comprovarCollisioPala(pilota, palaDreta)) {
-        if (pilota.velocitatX > 0) {
-            pilota.velocitatX = -pilota.velocitatX * 1.05f;
-            float posicioRelativa = (pilota.y - (palaDreta.y + palaDreta.alcada / 2)) / (palaDreta.alcada / 2);
-            pilota.velocitatY += posicioRelativa * 200.0f;
+    if (comprovarCollisioPala(pilota, palaDreta)) { // Xoc pala dreta
+        if (pilota.velocitatX > 0) { // Si va dreta
+            pilota.velocitatX = -pilota.velocitatX * 1.05f; // Rebota i accelera
+            float posicioRelativa = (pilota.y - (palaDreta.y + palaDreta.alcada / 2)) / (palaDreta.alcada / 2); // Calcula angle
+            pilota.velocitatY += posicioRelativa * 200.0f; // Modifica vertical
         }
     }
 }
 
-bool comprovarPuntuacio(const Pilota& pilota, Pala& palaEsquerra, Pala& palaDreta) {
-    // Augmenta la puntuacio de la pala que hagi marcat
-    if (pilota.x < 0) {
-        palaEsquerra.puntuacio++;
-
-        std::cout << "La pala dreta ha marcat" << endl;
-
-        return true;
+bool comprovarPuntuacio(const Pilota& pilota, Pala& palaEsquerra, Pala& palaDreta) { // Comprova gols
+    if (pilota.x < 0) { // Surt per l'esquerra
+        palaEsquerra.puntuacio++; // Punt per dreta
+        std::cout << "La pala dreta ha marcat" << endl; // Missatge consola
+        return true; // Gol marcat
     }
-    if (pilota.x > AMPLADA_FINESTRA) {
-        palaDreta.puntuacio++;
-
-        std::cout << "La pala esquerra ha marcat" << endl;
-
-        return true;
+    if (pilota.x > AMPLADA_FINESTRA) { // Surt per dreta
+        palaDreta.puntuacio++; // Punt per esquerra
+        std::cout << "La pala esquerra ha marcat" << endl; // Missatge consola
+        return true; // Gol marcat
     }
-    return false;
+    return false; // No hi ha gol
 }
 
-// Dibuixa la pilota a la finestra
-void dibuixarPilota(sf::RenderWindow& finestra, const Pilota& pilota) {
-    sf::CircleShape forma(pilota.radi);
-    forma.setPosition({ pilota.x - pilota.radi, pilota.y - pilota.radi });
-    forma.setFillColor(sf::Color::White);
-    finestra.draw(forma);
+void dibuixarPilota(sf::RenderWindow& finestra, const Pilota& pilota) { // Dibuixa pilota
+    sf::CircleShape forma(pilota.radi); // Crea cercle
+    forma.setPosition({ pilota.x - pilota.radi, pilota.y - pilota.radi }); // Posa posició
+    forma.setFillColor(sf::Color::White); // Color blanc
+    finestra.draw(forma); // Renderitza cercle
 }
